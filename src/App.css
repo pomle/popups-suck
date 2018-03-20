@@ -1,0 +1,48 @@
+.App {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+}
+
+.App .Welcome {
+  margin: 4em;
+  max-width: 800px;
+}
+
+.App .Welcome.blur {
+  filter: blur(20px);
+}
+
+.App .Welcome .question {
+  margin: 2em 0;
+}
+
+.App .Popup {
+  background: #fff;
+  box-shadow: 0 1em 2em -1em #000;
+  position: absolute;
+  max-width: 30em;
+  padding: 2em;
+  transition: transform 0.3s;
+  z-index: 2;
+}
+
+.App .Popup .close svg {
+  cursor: pointer;
+  float: right;
+  height: 50px;
+  width: 50px;
+}
+
+.App .Popup .logo svg {
+  display: block;
+  margin: 1em auto;
+  height: 100px;
+  width: 100px;
+}
+
+.App .Popup.hidden {
+  transform: scale(0);
+  pointer-events: none;
+}
