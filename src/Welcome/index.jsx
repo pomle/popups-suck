@@ -23,7 +23,8 @@ export class Welcome extends Component {
         <div className="question">
           <p>
             If there is a yellow Giraffe crossing the street on a Sunday,
-            which color would it's Frog friend have on a Tuesday?
+            which color would it's Frog friend have on the following Tuesday,
+            given it is a normal frog?
           </p>
 
           <input/>
@@ -35,8 +36,9 @@ export class Welcome extends Component {
 
         <div className="question">
           <p>
-            If three persons are waiting for the bus on a weekend,
-            how many people are coming to the party the next weekend?
+            If three persons are waiting for the bus on Thursday before the weekend,
+            how many people are coming to the party the next weekend when they have
+            invited eleven people?
           </p>
 
           <input/>

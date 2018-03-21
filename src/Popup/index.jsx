@@ -26,7 +26,7 @@ export class Popup extends Component {
         </p>
 
         <p>
-          The information below.
+          Please read the information below.
         </p>
 
         <p>
