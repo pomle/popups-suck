@@ -19,11 +19,14 @@ export function Explain() {
       Therefore it is extremely unlikely a user will be motivated enough to read all you wrote without dropping attention.
     </p>
 
+    <h3>Popups is where information goes to die</h3>
+
     <ul>
       <li>Humans have been taught to dismiss popups as a knee-jerk reaction.</li>
       <li>Popups have no intuitive way to be re-raise by the user when needed.</li>
       <li>Popups blocks the context needed to understand the text they prevent.</li>
       <li>Popups forces users to fork their train of thought against their will.</li>
+      <li>Scrolling and popups do not mix well.</li>
     </ul>
 
     <p>
