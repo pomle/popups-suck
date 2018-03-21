@@ -6,6 +6,8 @@ import {Intro} from './Text/Intro';
 
 import './App.css';
 
+const POPUP_INTRO_DELAY = 3000;
+
 const POPUP_INTRO = 'intro';
 
 class App extends Component {
@@ -19,7 +21,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    setTimeout(this.show(POPUP_INTRO), 3000);
+    setTimeout(this.show(POPUP_INTRO), POPUP_INTRO_DELAY);
   }
 
   hide = id => {
