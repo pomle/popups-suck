@@ -44,7 +44,7 @@ export class Welcome extends Component {
           <input/>
         </div>
 
-        <button>Continue</button>
+        <button onClick={this.props.onContinue}>Continue</button>
 
         <p style={{fontSize: "smaller"}}>
           This site actually tests whether you will read a popup dialog that was

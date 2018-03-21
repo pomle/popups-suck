@@ -3,12 +3,14 @@ import {Welcome} from './Welcome';
 import {Popup} from './Popup';
 
 import {Intro} from './Text/Intro';
+import {Explain} from './Text/Explain';
 
 import './App.css';
 
 const POPUP_INTRO_DELAY = 3000;
 
 const POPUP_INTRO = 'intro';
+const POPUP_EXPLAIN = 'explain';
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +23,7 @@ class App extends Component {
 
     this.timing = {
       [POPUP_INTRO]: [],
+      [POPUP_EXPLAIN]: [],
     };
   }
 
@@ -59,7 +62,11 @@ class App extends Component {
           <Intro/>
         </Popup>
 
-        <Welcome blur={Object.keys(popups).some(key => popups[key])} />
+        <Popup visible={popups[POPUP_EXPLAIN]} onClose={this.hide(POPUP_EXPLAIN)}>
+          <Explain/>
+        </Popup>
+
+        <Welcome blur={Object.keys(popups).some(key => popups[key])} onContinue={this.show(POPUP_EXPLAIN)}/>
       </div>
     );
   }
