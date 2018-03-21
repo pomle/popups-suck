@@ -73,7 +73,6 @@ class App extends Component {
 
   render() {
     const {popups} = this.state;
-    console.log(popups);
 
     return (
       <div className="App">
