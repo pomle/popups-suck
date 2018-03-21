@@ -42,7 +42,8 @@ class App extends Component {
 
           <p>
             Behind this popup there is going to be a few questions you must answer correctly
-            in order to enter our site.
+            in order to enter our site. This is a test to ensure you are human. This method
+            of testing is called a <a href="https://en.wikipedia.org/wiki/CAPTCHA">Captcha</a>.
           </p>
 
           <p>
