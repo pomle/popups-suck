@@ -8,8 +8,6 @@ import {Explain} from './Text/Explain';
 
 import './App.css';
 
-ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
-
 const POPUP_INTRO_DELAY = 3000;
 
 const POPUP_INTRO = 'intro';
