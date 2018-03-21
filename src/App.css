@@ -27,6 +27,7 @@
   box-shadow: 0 1em 2em -1em #000;
   position: absolute;
   max-width: 30em;
+  margin-bottom: 5em;
   padding: 2em;
   transition: transform 0.3s;
   z-index: 2;

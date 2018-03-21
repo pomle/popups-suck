@@ -1,5 +1,6 @@
 body {
   background: #f1f1f1 url('/image/background.jpg') no-repeat right;
+  background-attachment: fixed;
   background-size: cover;
   color: #424242;
   line-height: 1.6;
