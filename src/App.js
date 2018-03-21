@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 import {Welcome} from './Welcome';
 import {Popup} from './Popup';
 
@@ -6,6 +7,8 @@ import {Intro} from './Text/Intro';
 import {Explain} from './Text/Explain';
 
 import './App.css';
+
+ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
 
 const POPUP_INTRO_DELAY = 3000;
 
