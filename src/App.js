@@ -18,6 +18,10 @@ class App extends Component {
       popups: {},
       results: null,
     };
+
+    this.timing = {
+      [POPUP_INTRO]: [],
+    };
   }
 
   componentDidMount() {
@@ -25,7 +29,10 @@ class App extends Component {
   }
 
   hide = id => {
-    return this.setPopupState(id, false);
+    return (closeData) => {
+      this.timing[id].push(closeData);
+      this.setPopupState(id, false)();
+    };
   }
 
   show = id => {

@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
 
+function time() {
+  return new Date().getTime();
+}
+
 export class Popup extends Component {
+  close = () => {
+    const duration = time() - this.startTime;
+
+    this.props.onClose({
+      duration,
+    });
+  }
+
   render() {
     const classNames = ['Popup'];
     if (this.props.visible) {
+      this.startTime = time();
       classNames.push('visible');
     } else {
       classNames.push('hidden');
@@ -23,7 +36,7 @@ export class Popup extends Component {
           {this.props.children}
         </div>
 
-        <button onClick={this.props.onClose}>Continue</button>
+        <button onClick={this.close}>Continue</button>
       </div>
     );
   }
