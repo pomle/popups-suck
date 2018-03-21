@@ -1,6 +1,34 @@
 import React, { Component } from 'react';
 
 export class Welcome extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      answers: {},
+    };
+
+    this.updateColor = this.updateAnswer('color');
+    this.updateNumber = this.updateAnswer('number');
+  }
+
+  updateAnswer(name) {
+    return (event) => {
+      const value = event.target.value;
+      this.setState(({answers}) => {
+        return {
+          answers: Object.assign({}, answers, {
+            [name]: value,
+          })
+        };
+      });
+    }
+  }
+
+  continue = () => {
+    this.props.onContinue(this.state.answers);
+  }
+
   render() {
     const classNames = ["Welcome"];
     if (this.props.blur) {
@@ -27,7 +55,7 @@ export class Welcome extends Component {
             given it is a normal frog?
           </p>
 
-          <input/>
+          <input onChange={this.updateColor}/>
         </div>
 
         <p>
@@ -41,10 +69,10 @@ export class Welcome extends Component {
             invited eleven people?
           </p>
 
-          <input/>
+          <input onChange={this.updateNumber}/>
         </div>
 
-        <button onClick={this.props.onContinue}>Continue</button>
+        <button onClick={this.continue}>Continue</button>
 
         <p style={{fontSize: "smaller"}}>
           This site actually tests whether you will read a popup dialog that was

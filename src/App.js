@@ -34,8 +34,24 @@ class App extends Component {
     setTimeout(this.show(POPUP_INTRO), POPUP_INTRO_DELAY);
   }
 
+  continue = answers => {
+    ReactGA.event(Object.assign({
+      category: 'Answer',
+      action: 'Respond',
+    }, answers));
+
+    this.show(POPUP_EXPLAIN)();
+  }
+
   hide = id => {
     return (closeData) => {
+      ReactGA.event({
+        category: 'Popup',
+        action: 'Close',
+        id,
+        duration: closeData.duration,
+      });
+
       this.timing[id].push(closeData);
       this.setPopupState(id, false)();
     };
@@ -69,7 +85,7 @@ class App extends Component {
           <Explain/>
         </Popup>
 
-        <Welcome blur={Object.keys(popups).some(key => popups[key])} onContinue={this.show(POPUP_EXPLAIN)}/>
+        <Welcome blur={Object.keys(popups).some(key => popups[key])} onContinue={this.continue}/>
       </div>
     );
   }
