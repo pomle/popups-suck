@@ -4,32 +4,47 @@ import {Popup} from './Popup';
 
 import './App.css';
 
+const POPUP_INTRO = 'intro';
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      visible: false,
+      popups: {},
       results: null,
     };
   }
 
   componentDidMount() {
-    setTimeout(this.show, 3000);
+    setTimeout(this.show(POPUP_INTRO), 3000);
   }
 
-  hide = () => {
-    this.setState({visible: false});
+  hide = id => {
+    return this.setPopupState(id, false);
   }
 
-  show = () => {
-    this.setState({visible: true});
+  show = id => {
+    return this.setPopupState(id, true);
+  }
+
+  setPopupState(id, visible) {
+    return () => {
+      this.setState(({popups}) => {
+        return {
+          popups: Object.assign({}, popups, {[id]: visible}),
+        }
+      });
+    }
   }
 
   render() {
+    const {popups} = this.state;
+    console.log(popups);
+
     return (
       <div className="App">
-        <Popup visible={this.state.visible} onClose={this.hide}>
+        <Popup visible={popups[POPUP_INTRO]} onClose={this.hide(POPUP_INTRO)}>
           <h1>Hello, there!</h1>
 
           <p>
@@ -66,7 +81,7 @@ class App extends Component {
             Team Dominicator
           </p>
         </Popup>
-        <Welcome blur={this.state.visible} />
+        <Welcome blur={Object.keys(popups).some(key => popups[key])} />
       </div>
     );
   }
