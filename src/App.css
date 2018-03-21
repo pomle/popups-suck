@@ -6,8 +6,12 @@
 }
 
 .App .Welcome {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 0.2em;
+  box-shadow: 0 1em 2em -1em #000;
   margin: 4em;
   max-width: 800px;
+  padding: 2em;
 }
 
 .App .Welcome.blur {
