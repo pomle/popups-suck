@@ -20,7 +20,7 @@ export class Welcome extends Component {
           The first question is based on color.
         </p>
 
-        <div class="question">
+        <div className="question">
           <p>
             If there is a yellow Giraffe crossing the street on a Sunday,
             which color would it's Frog friend have on a Tuesday?
@@ -33,7 +33,7 @@ export class Welcome extends Component {
           The second question is based on numbers.
         </p>
 
-        <div class="question">
+        <div className="question">
           <p>
             If three persons are waiting for the bus on a weekend,
             how many people are coming to the party the next weekend?
