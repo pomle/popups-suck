@@ -15,7 +15,7 @@
 }
 
 .App .Welcome.blur {
-  filter: blur(20px);
+  filter: blur(6px);
 }
 
 .App .Welcome .question {
